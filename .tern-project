@@ -1,0 +1,48 @@
+{
+  "ecmaVersion": 5,
+  "plugins": {
+    "guess-types": {
+      
+    },
+    "outline": {
+      
+    },
+    "complete_strings": {
+      
+    },
+    "node": {
+      
+    },
+    "jasmine": {
+      
+    },
+    "jshint": {
+      
+    },
+    "angular": {
+      
+    },
+    "extjs4.2.1": {
+      
+    },
+    "grunt": {
+      
+    },
+    "browser-extension": {
+      
+    },
+    "protractor": {
+      
+    },
+    "bootstrap": {
+      
+    },
+    "jquery-extension": {
+      
+    }
+  },
+  "libs": [
+    "browser",
+    "jquery"
+  ]
+}
