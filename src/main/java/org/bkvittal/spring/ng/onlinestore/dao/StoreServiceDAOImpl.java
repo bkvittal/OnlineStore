@@ -3,6 +3,8 @@ package org.bkvittal.spring.ng.onlinestore.dao;
 import java.util.List;
 
 import javax.sql.DataSource;
+
+import org.bkvittal.spring.ng.onlinestore.model.Customer;
 import org.bkvittal.spring.ng.onlinestore.model.Product;
 import org.bkvittal.spring.ng.onlinestore.rowmapper.ProductRowMapper;
 import org.hibernate.Session;
@@ -30,6 +32,17 @@ public class StoreServiceDAOImpl implements StoreServiceDAO {
 	    		  new Object[]{cat}, new ProductRowMapper());
 	      return products;
 	   }
+
+	public void create(Customer customer) {
+		String SQL = "insert into CUSTOMER (ID,FIRSTNAME,LASTNAME,EMAIL,PHONE,USERNAME,PASSWORD,GENDER) values (?, ?, ?, ?, ?, ?, ?, ?)";
+	      
+	      jdbcTemplateObject.update( SQL,customer.getId(),customer.getFirstName(),customer.getLastName(),customer.getEmail(),
+	    		  customer.getPhoneNumber(),customer.getUserName(),customer.getPassWord(),customer.getGender());
+	      
+	      System.out.println("Created Record Id = " + customer.getId() + " Name = " + customer.getUserName());
+	      return;
+		
+	}
 
 	/*private SessionFactory sessionFactory;
 	 

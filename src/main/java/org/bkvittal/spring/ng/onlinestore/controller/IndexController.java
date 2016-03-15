@@ -22,5 +22,15 @@ public class IndexController {
     public String getCatType() {
         return "CatType";
     }
+    
+    @RequestMapping(value = "signup", method = RequestMethod.GET)
+    public String getSignUpPage() {
+        return "CustomerSignUp";
+    }
+    
+    @RequestMapping(value = "signin", method = RequestMethod.GET)
+    public String getSignInPage() {
+        return "CustomerSignIn";
+    }
  
 }

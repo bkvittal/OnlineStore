@@ -78,3 +78,23 @@ myApp.service('CartService',function(){
     };
     
 });
+
+myApp.factory('CustomerService', ['$http', '$q', function($http, $q){
+ 
+    return {
+          createCustomer: function(customer){
+        	  console.log(customer);
+                    return $http.post('http://localhost:8090/OnlineStore/customer/signup', customer)
+                            .then(
+                                    function(response){
+                                        return response.data;
+                                    }, 
+                                    function(errResponse){
+                                        console.error('Error while creating user');
+                                        return $q.reject(errResponse);
+                                    }
+                            );
+            }
+           
+    };
+}]);

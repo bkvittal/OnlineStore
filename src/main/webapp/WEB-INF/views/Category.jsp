@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html  ng-app="myApp" class="ng-cloak">
+<html  ng-app="myApp" ng-cloak>
   <head>  
     <title>Online Store </title>  
     <meta charset="utf-8">
@@ -72,8 +72,8 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart({{ cartSize || 0 }}) </a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="#/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#/signin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
 </nav>

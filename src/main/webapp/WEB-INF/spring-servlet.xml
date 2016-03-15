@@ -27,7 +27,7 @@
         <property name="password" value="admin" />
     </bean>
     
-     <bean id="userDAO" class="org.bkvittal.spring.ng.onlinestore.dao.StoreServiceDAOImpl">
+     <bean id="storeServiceDAOImpl" class="org.bkvittal.spring.ng.onlinestore.dao.StoreServiceDAOImpl">
     <property name="dataSource" ref="dataSource" />
 </bean>
  <!--    

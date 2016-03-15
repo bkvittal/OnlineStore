@@ -18,6 +18,16 @@ myApp.config(function($routeProvider){
      .when('/cat/:type',{
         templateUrl: '/OnlineStore/cattype',
         controller: 'CategoryController'
+    })
+    
+    .when('/signup',{
+        templateUrl: '/OnlineStore/signup',
+        controller: 'CustomerController'
+    })
+    
+    .when('/signin',{
+        templateUrl: '/OnlineStore/signin',
+        controller: 'CustomerController'
     });
   
 });
@@ -105,3 +115,30 @@ myApp.controller('HomeController',['$scope','$rootScope','$location','$log','$ro
     };*/
 }] );
 
+myApp.controller('CustomerController',['$scope','$rootScope','$location','$log','$routeParams','CustomerService',function($scope,$rootScope,$location,$log,$routeParams,CustomerService) {
+    console.log('lgoge contlr');
+	$scope.customer={
+			id:null,
+			firstName:'default',
+			lastName:'default',
+			email:'default',
+			phoneNumber:'1234567890',
+			userName:'default',
+			passWord:'default',
+			gender:'Select Gender'
+				};
+	$scope.createCustomer = function(){
+		console.log('in Create Method');
+		console.log($scope.customer);
+		CustomerService.createCustomer($scope.customer)
+            .then(
+           function(){
+        	   
+           }, 
+                    function(errResponse){
+                         console.error('Error while creating User.');
+                    } 
+        );
+};
+
+}] );
